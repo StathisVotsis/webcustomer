@@ -71,3 +71,7 @@ C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\webcustomer\bin\Microso
 C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\webcustomer\obj\Debug\webcustomer.csprojResolveAssemblyReference.cache
 C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\webcustomer\obj\Debug\webcustomer.dll
 C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\webcustomer\obj\Debug\webcustomer.pdb
+C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\webcustomer\bin\Stathis.Data.dll
+C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\webcustomer\bin\Stathis.Repository.dll
+C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\webcustomer\bin\Stathis.Data.pdb
+C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\webcustomer\bin\Stathis.Repository.pdb

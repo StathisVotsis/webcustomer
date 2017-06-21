@@ -152,6 +152,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StathisController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -200,6 +201,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Stathis\ViewPage1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -218,6 +220,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Stathis.Data\Stathis.Data.csproj">
+      <Project>{5ce6e5a1-5060-49e0-9c7c-6c93de99deb7}</Project>
+      <Name>Stathis.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Stathis.Repository\Stathis.Repository.csproj">
+      <Project>{074295d3-01fe-4c7d-8c0d-fa1b341ce150}</Project>
+      <Name>Stathis.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

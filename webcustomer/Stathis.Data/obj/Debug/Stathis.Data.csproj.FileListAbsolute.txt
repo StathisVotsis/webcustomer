@@ -1,0 +1,5 @@
+C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\Stathis.Data\bin\Debug\Stathis.Data.dll
+C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\Stathis.Data\bin\Debug\Stathis.Data.pdb
+C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\Stathis.Data\obj\Debug\Stathis.Data.csprojResolveAssemblyReference.cache
+C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\Stathis.Data\obj\Debug\Stathis.Data.dll
+C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\Stathis.Data\obj\Debug\Stathis.Data.pdb
