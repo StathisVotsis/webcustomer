@@ -5,3 +5,10 @@ C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\Stathis.Repository\obj\
 C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\Stathis.Repository\obj\Debug\Stathis.Repository.pdb
 C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\Stathis.Repository\bin\Debug\Stathis.Data.dll
 C:\Users\Stathis\Desktop\develop\webcustomer\webcustomer\Stathis.Repository\bin\Debug\Stathis.Data.pdb
+C:\Users\s.votsis.CREATIVEMINDS\Desktop\develop\webcustomer\webcustomer\Stathis.Repository\bin\Debug\Stathis.Repository.dll
+C:\Users\s.votsis.CREATIVEMINDS\Desktop\develop\webcustomer\webcustomer\Stathis.Repository\bin\Debug\Stathis.Repository.pdb
+C:\Users\s.votsis.CREATIVEMINDS\Desktop\develop\webcustomer\webcustomer\Stathis.Repository\bin\Debug\Stathis.Data.dll
+C:\Users\s.votsis.CREATIVEMINDS\Desktop\develop\webcustomer\webcustomer\Stathis.Repository\bin\Debug\Stathis.Data.pdb
+C:\Users\s.votsis.CREATIVEMINDS\Desktop\develop\webcustomer\webcustomer\Stathis.Repository\obj\Debug\Stathis.Repository.csprojResolveAssemblyReference.cache
+C:\Users\s.votsis.CREATIVEMINDS\Desktop\develop\webcustomer\webcustomer\Stathis.Repository\obj\Debug\Stathis.Repository.dll
+C:\Users\s.votsis.CREATIVEMINDS\Desktop\develop\webcustomer\webcustomer\Stathis.Repository\obj\Debug\Stathis.Repository.pdb
