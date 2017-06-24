@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Stathis.Data.Customer>
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+    </tr>
+   @foreach (var item in Model)
+   {
+    <tr>
+
+        <td>@item.FirstName</td>
+        
+    </tr>
+   }
+</table>
+
