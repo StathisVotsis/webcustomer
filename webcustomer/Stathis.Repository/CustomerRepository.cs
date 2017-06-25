@@ -33,6 +33,7 @@ namespace Stathis.Repository
                         var customer = new Customer();
                         customer.Id = Int32.Parse(reader["Id"].ToString());
                         customer.FirstName = reader["FirstName"].ToString();
+                        customer.LastName = reader["LastName"].ToString();
                         customer.Email = reader["Email"].ToString();
                         customers.Add(customer);
 
@@ -63,11 +64,34 @@ namespace Stathis.Repository
                     {
                         customer.Id = Int32.Parse(reader["Id"].ToString());
                         customer.FirstName = reader["FirstName"].ToString();
+                        customer.LastName = reader["LastName"].ToString();
                         customer.Email = reader["Email"].ToString();
                     }
                 }
             }
             return customer;
         }
+
+        public void Insert(Customer customer)
+        {
+
+            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["db"].ToString()))
+            {
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.CommandText = "INSERT INTO Table2(FirstName,LastName,Email) VALUES(@FirstName,@LastName,@Email);";
+                //  sqlCmd.Parameters.Add(new SqlParameter("@Id", customer.Id));
+                sqlCmd.Parameters.Add(new SqlParameter("@FirstName", customer.FirstName));
+                sqlCmd.Parameters.Add(new SqlParameter("@LastName", customer.LastName));
+                sqlCmd.Parameters.Add(new SqlParameter("@Email", customer.Email));
+                sqlCmd.Connection = connection;
+                connection.Open();
+                sqlCmd.ExecuteNonQuery();
+
+            }
+
+        }
+
     }
 }

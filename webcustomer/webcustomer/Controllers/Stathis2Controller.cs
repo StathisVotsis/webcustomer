@@ -37,12 +37,12 @@ namespace webcustomer.Controllers
 
         // POST: Stathis2/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Customer customer)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                var customerRepo = new CustomerRepository();
+                customerRepo.Insert(customer);
                 return RedirectToAction("Index");
             }
             catch
@@ -51,10 +51,11 @@ namespace webcustomer.Controllers
             }
         }
 
-        // GET: Stathis2/Edit/5
+        [HttpGet]
         public ActionResult Edit(int id)
         {
-            return View();
+            var customerRepo = new CustomerRepository();
+            return View(customerRepo.GetById(id));//return customer
         }
 
         // POST: Stathis2/Edit/5

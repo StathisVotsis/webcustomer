@@ -204,6 +204,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Stathis2\Create.cshtml" />
     <Content Include="Views\Stathis2\Index.cshtml" />
+    <Content Include="Views\Stathis2\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
