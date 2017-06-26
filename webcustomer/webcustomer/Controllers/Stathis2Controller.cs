@@ -59,13 +59,13 @@ namespace webcustomer.Controllers
         }
 
         // POST: Stathis2/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [HttpPut]
+        public ActionResult Edit(Customer customer)
         {
             try
             {
-                // TODO: Add update logic here
-
+                var customerRepo = new CustomerRepository();
+                customerRepo.Update(customer);
                 return RedirectToAction("Index");
             }
             catch
@@ -74,26 +74,12 @@ namespace webcustomer.Controllers
             }
         }
 
-        // GET: Stathis2/Delete/5
+        [HttpPost]
         public ActionResult Delete(int id)
         {
-            return View();
-        }
-
-        // POST: Stathis2/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            var customerRepo = new CustomerRepository();
+            customerRepo.Delete(id);
+            return RedirectToAction("Index");
         }
     }
 }

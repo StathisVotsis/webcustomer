@@ -93,5 +93,40 @@ namespace Stathis.Repository
 
         }
 
+        public void Update(Customer customer)
+        {
+            //var customer = new Customer();
+            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["db"].ToString()))
+            {
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.CommandText = "UPDATE Table2 SET FirstName=@FirstName where Id=@Id;";
+                sqlCmd.Parameters.Add(new SqlParameter("@Id", customer.Id));
+                sqlCmd.Parameters.Add(new SqlParameter("@FirstName", customer.FirstName));
+                sqlCmd.Parameters.Add(new SqlParameter("@LastName", customer.LastName));
+                sqlCmd.Parameters.Add(new SqlParameter("@Email", customer.Email));
+                sqlCmd.Connection = connection;
+                connection.Open();
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+
+
+        public void Delete(int id)
+        {
+            //var customer = new Customer();
+            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["db"].ToString()))
+            {
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.CommandText = "DELETE FROM Table2 where Id=@Id;";
+                sqlCmd.Parameters.Add(new SqlParameter("@Id", id));
+                sqlCmd.Connection = connection;
+                connection.Open();
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
     }
 }
