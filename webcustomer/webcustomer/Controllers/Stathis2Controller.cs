@@ -58,8 +58,8 @@ namespace webcustomer.Controllers
             return View(customerRepo.GetById(id));//return customer
         }
 
-        
-     
+
+        [HttpPost]
         public ActionResult Edit(Customer customer)
         {
             try
@@ -74,7 +74,7 @@ namespace webcustomer.Controllers
             }
         }
 
-       
+        [HttpDelete()]
         public ActionResult Delete(int id)
         {
             var customerRepo = new CustomerRepository();

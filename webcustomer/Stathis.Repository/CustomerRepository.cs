@@ -101,7 +101,7 @@ namespace Stathis.Repository
 
                 SqlCommand sqlCmd = new SqlCommand();
                 sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "UPDATE Table2 SET FirstName=@FirstName where Id=@Id;";
+                sqlCmd.CommandText = "UPDATE Table2 SET FirstName=@FirstName AND LastName=@LastName And Email=@Email where Id=@Id;";
                 sqlCmd.Parameters.Add(new SqlParameter("@Id", customer.Id));
                 sqlCmd.Parameters.Add(new SqlParameter("@FirstName", customer.FirstName));
                 sqlCmd.Parameters.Add(new SqlParameter("@LastName", customer.LastName));
