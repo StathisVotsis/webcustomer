@@ -32,7 +32,8 @@ namespace webcustomer.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View(new Customer());
+            Customer model = new Customer();
+            return View(model);
         }
 
         // POST: Stathis2/Create

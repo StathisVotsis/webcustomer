@@ -12,8 +12,6 @@ namespace Stathis.Data
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
-        [CustomEmailValidator]
         public string Email { get; set; }
     }
 }
