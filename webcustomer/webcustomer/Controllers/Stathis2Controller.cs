@@ -16,15 +16,15 @@ namespace webcustomer.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            //DataTable dtblCustomer = new DataTable();
-            //using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["db"].ToString()))
-           // {
-              //  connection.Open();
-                //SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * From Table2",connection);
-                //sqlDa.Fill(dtblCustomer);
-           // }
-            var customerRepo = new CustomerRepository();
-            return View(customerRepo.GetCustomers());
+            try
+            {
+                var customerRepo = new CustomerRepository();
+                return View(customerRepo.GetCustomers());
+            }
+            catch
+            {
+                return RedirectToAction("Index");
+            }      
         }
 
        
@@ -47,7 +47,7 @@ namespace webcustomer.Controllers
             }
             catch
             {
-                return View();
+                return RedirectToAction("Index");
             }
         }
 
@@ -70,16 +70,23 @@ namespace webcustomer.Controllers
             }
             catch
             {
-                return View();
+                return RedirectToAction("Index");
             }
         }
 
         [HttpDelete()]
         public ActionResult Delete(int id)
-        {
-            var customerRepo = new CustomerRepository();
-            customerRepo.Delete(id);
-            return RedirectToAction("Index");
+        {     
+            try
+            {
+                var customerRepo = new CustomerRepository();
+                customerRepo.Delete(id);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return RedirectToAction("Index");
+            }
         }
     }
 }

@@ -12,8 +12,8 @@ namespace Stathis.Data
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-       
-        [EmailAddress(ErrorMessage = "Invalid Email Address")]
+
+        [CustomEmailValidator]
         public string Email { get; set; }
     }
 }
