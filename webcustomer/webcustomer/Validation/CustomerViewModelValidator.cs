@@ -11,10 +11,11 @@ namespace webcustomer.Validation
     {
         public CustomerViewModelValidator()
         {
-            RuleFor(x => x.FirstName).NotEmpty().WithMessage("*Required");
-            RuleFor(x => x.LastName).NotEmpty().WithMessage("*Required").Length(6, 10);
-            RuleFor(x => x.Email).EmailAddress().WithMessage("Not Valid").NotEmpty().WithMessage("*Required");
+            RuleFor(customer => customer.FirstName).NotEmpty();
+            RuleFor(customer => customer.LastName).NotEmpty();
+            RuleFor(customer => customer.Email).NotEmpty();
+
         }
-           
+
     }
 }

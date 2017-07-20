@@ -16,14 +16,7 @@ namespace webcustomer
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-        }
-
-        private void ValidationConfiguration()
-        {
-            FluentValidationModelValidatorProvider.Configure(provider =>
-            {
-                provider.ValidatorFactory = new ValidatorFactory();
-            });
+            FluentValidationModelValidatorProvider.Configure();
         }
     }
 }

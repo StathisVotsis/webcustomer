@@ -8,6 +8,10 @@ using System.Data;
 using System.Configuration;
 using Stathis.Data;
 using Stathis.Repository;
+using FluentValidation.Validators;
+using webcustomer.Validation;
+using FluentValidation.Results;
+using FluentValidation.Mvc;
 
 namespace webcustomer.Controllers
 {
@@ -33,7 +37,11 @@ namespace webcustomer.Controllers
         public ActionResult Create()
         {
             Customer model = new Customer();
+            //CustomerViewModelValidator validator = new CustomerViewModelValidator();
+            //ValidationResult results = validator.Validate(model);
+            //results.AddToModelState(ModelState, null);
             return View(model);
+           
         }
 
         // POST: Stathis2/Create
@@ -42,9 +50,24 @@ namespace webcustomer.Controllers
         {
             try
             {
-                var customerRepo = new CustomerRepository();
-                customerRepo.Insert(customer);
-                return RedirectToAction("Index");
+                CustomerViewModelValidator validator = new CustomerViewModelValidator();
+                ValidationResult result = validator.Validate(customer);
+                if (result.IsValid)
+                {
+                    //ViewBag.Name = model.Name;
+                    //ViewBag.Email = model.Email;
+                    var customerRepo = new CustomerRepository();
+                    customerRepo.Insert(customer);
+                    return RedirectToAction("Index");
+                }
+                else
+                {                    
+                    result.AddToModelState(ModelState, null);
+                    return View();
+                    //return RedirectToAction("Create");
+                }
+
+               
             }
             catch
             {
