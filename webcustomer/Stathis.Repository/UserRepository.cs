@@ -12,7 +12,7 @@ namespace Stathis.Repository
 {
     public class UserRepository
     {
-        public User GetById(int Id)
+        public User GetByPass(string name,string pass)
         {
             var user = new User();
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["db"].ToString()))
@@ -20,7 +20,7 @@ namespace Stathis.Repository
 
                 SqlCommand sqlCmd = new SqlCommand();
                 sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "Select * from User where Id='" + Id + "';";
+                sqlCmd.CommandText = "Select * from Table3 where UserName='" + name + "' AND PassWord='"+ pass +"';";
                 sqlCmd.Connection = connection;
                 connection.Open();
                 //SqlDataReader reader = sqlCmd.ExecuteReader();
@@ -31,11 +31,12 @@ namespace Stathis.Repository
                     {
                         user.Id = Int32.Parse(reader["Id"].ToString());
                         user.UserName = reader["UserName"].ToString();
-                        user.Password = reader["Password"].ToString();
-                        user.Email = reader["Email"].ToString();
+                        user.Password = reader["PassWord"].ToString();
+                        
                     }
                 }
             }
+            
             return user;
         }
     }

@@ -20,7 +20,7 @@ namespace webcustomer.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            if(Session["user"] == null)
+            if(Session["username"] == null)
             {
                 return RedirectToAction("Login","Login");
             }
@@ -43,12 +43,18 @@ namespace webcustomer.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            Customer model = new Customer();
-            //CustomerViewModelValidator validator = new CustomerViewModelValidator();
-            //ValidationResult results = validator.Validate(model);
-            //results.AddToModelState(ModelState, null);
-            return View(model);
-           
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
+            else
+            {
+                Customer model = new Customer();
+                //CustomerViewModelValidator validator = new CustomerViewModelValidator();
+                //ValidationResult results = validator.Validate(model);
+                //results.AddToModelState(ModelState, null);
+                return View(model);
+            }                      
         }
 
         // POST: Stathis2/Create
@@ -85,8 +91,15 @@ namespace webcustomer.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var customerRepo = new CustomerRepository();
-            return View(customerRepo.GetById(id));//return customer
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
+            else
+            {
+                var customerRepo = new CustomerRepository();
+                return View(customerRepo.GetById(id));//return customer
+            }           
         }
 
 

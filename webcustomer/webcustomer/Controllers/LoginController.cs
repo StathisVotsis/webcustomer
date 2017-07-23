@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Stathis.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Stathis.Data;
 
 namespace webcustomer.Controllers
 {
@@ -15,9 +17,25 @@ namespace webcustomer.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login()
+        public ActionResult Login(string name, string pass)
         {
-            return View();
+            var userRepo = new UserRepository();
+            Session["username"] = userRepo.GetByPass(name, pass).UserName;
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Login","Login");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Stathis2");
+            }
+            //return View(userRepo.GetByPass(name,pass,mail));//return customer
+        }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Login","Login");
         }
     }
 }
