@@ -20,15 +20,22 @@ namespace webcustomer.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            try
+            if(Session["user"] == null)
             {
-                var customerRepo = new CustomerRepository();
-                return View(customerRepo.GetCustomers());
+                return RedirectToAction("Login","Login");
             }
-            catch
+            else
             {
-                return RedirectToAction("Index");
-            }      
+                try
+                {
+                    var customerRepo = new CustomerRepository();
+                    return View(customerRepo.GetCustomers());
+                }
+                catch
+                {
+                    return RedirectToAction("Index");
+                }
+            }               
         }
 
        

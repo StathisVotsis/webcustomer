@@ -162,6 +162,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\Stathis2Controller.cs" />
     <Compile Include="Controllers\StathisController.cs" />
     <Compile Include="Global.asax.cs">
@@ -233,6 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Views\Login\" />
     <Folder Include="Views\Stathis\" />
   </ItemGroup>
   <ItemGroup>
